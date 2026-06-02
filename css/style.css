@@ -1,0 +1,465 @@
+:root {
+    --mainColor: rgb(82, 82, 61);
+    --secondaryColor: #e3f0da;
+    --secondaryColor2:rgb(244, 255, 236);
+    --secondaryColor3:rgb(249, 255, 245);
+    --accentColor: #95bb6a;
+    --transition: all .3s ease;
+}
+body {
+    font-family: "PlaypenSans", sans-serif;
+}
+.container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+
+.header {
+    background-color: var(--mainColor);
+    padding: 35px 0;
+}
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__menu {
+    position: relative;
+}
+
+/* 🍔 Отрисовки «бургера» меню‑гамбургера  */
+.header__menu-burger {
+    display: none;
+    width: 30px;
+    height: 30px;
+    position: relative; 
+    border: none;       
+    background: none;  
+    cursor: pointer; 
+    z-index: 2;
+}
+/*Общие стили для линий*/
+.header__menu-burger::before,  
+.header__menu-burger::after,  
+.header__menu-burger span {   
+    content: "";                
+    position: absolute;        
+    left: 0;                    
+    width: 100%;                
+    height: 3px;                
+    border-radius: 3px;              
+    background: var(--accentColor);
+    transition: 0.3s;
+    transform-origin: center;    
+}
+.header__menu-burger::before {  
+    top: 0;                            
+}
+.header__menu-burger span {
+    top: 50%;                      
+    transform: translateY(-50%);    
+}
+.header__menu-burger::after {
+    bottom: 0;                     
+}
+
+/* ✖️ Состояние "крестик" */
+.header__menu-burger.is-open::before {             
+    transform: translateY(-50%) rotate(45deg);     
+    top: 50%;                                       
+}
+.header__menu-burger.is-open::after {               
+    transform: translateY(-50%) rotate(-45deg);      
+    top: 50%;
+}
+.header__menu-burger.is-open span {            
+    opacity: 0;                                
+}
+
+.header__menu-list {
+    display: flex;
+    gap: 35px;
+    font-size: 16px;
+    /*margin-top: 65px;*/  
+    min-width: 200px;
+    padding: 15px;
+    z-index: 1;
+}
+.is-open {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    right: 0;
+    background-color: var(--mainColor);
+    /*min-width: 150px;*/
+    padding: 15px;
+    right: 15px;
+}
+.header__menu-list.is-open {   
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 65px;                  
+    min-width: 220px;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(82, 82, 61, .8);
+    box-shadow: 0 6px 20px rgba(0,0,0,.2);
+}
+.header__menu-link, 
+.footer__menu-link, 
+.footer__contacts-item, 
+.footer__polit, 
+.footer__copyright {
+    color: var(--secondaryColor);
+    transition: var(--transition);
+    display: block;
+    padding: 8px 0;
+    font-size: 18px;
+}
+.header__menu-link:hover, 
+.footer__menu-link:hover, 
+.footer__contacts-item:hover, 
+.footer__polit:hover, 
+.footer__copyright:hover{
+    color: var(--accentColor);
+}
+
+.hero__wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+        "item1 item2"
+        "item3 item2"
+        "item4 item2";
+}
+.hero__img{
+    max-width: 700px;
+    max-height: 441px;
+    grid-area: item2;
+    align-self: center;
+}
+.hero__title {
+    grid-area: item1;
+    font-size: 80px;
+    font-weight: 600;
+    color: var(--mainColor);
+    padding: 50px 0;
+}
+.hero__subtitle {
+    grid-area: item3;
+    font-size: 50px;
+    color: var(--mainColor);
+    padding-bottom: 50px;
+}
+.hero__cta {
+    grid-area: item4;
+    margin-bottom: 50px;
+}
+.btn {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--mainColor);
+    background-color: var(--accentColor);
+    border: 1px solid var(--mainColor);
+    border-radius: 3px;
+    max-width: 200px;
+    padding: 7px 20px;
+    transition: var(--transition);
+}
+.btn:hover {
+    background-color: var(--secondaryColor);
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--mainColor);
+    margin-bottom: 10px;
+}
+.subtitle {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--mainColor);
+    margin-bottom: 10px;
+}
+
+.active__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.active__img {
+    width: 500px;  
+    display: block;
+    margin: 0 auto; 
+}
+.text {
+    text-indent: 30px; 
+    margin-top: 15px;
+    color: var(--mainColor);
+}
+.active__requirements-box {
+  border: 2px solid var(--accentColor);
+  border-radius: 8px; 
+  padding: 20px;
+  background-color: var(--secondaryColor); 
+  color: var(--mainColor);
+  max-width: 500px; 
+  margin: 20px auto; 
+}
+.active__requirements-box h3 {
+  margin-top: 0; 
+  margin-bottom: 10px;
+  color: var(--mainColor); 
+  font-size: 1.2em; 
+  font-weight: 600;
+}
+.active__requirements-list {
+  list-style-type: none; 
+  padding-left: 0; 
+}
+.active__requirements-list li {
+  margin-bottom: 8px; 
+  line-height: 1.4; 
+  position: relative; 
+}
+/* Добавляем зелёные галочки перед пунктами */
+.active__requirements-list li::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  margin-right: 10px;
+  color: #4CAF50;
+}
+/* Стили для вложенного списка */
+.nested-list {
+  list-style-type: none;
+  padding-left: 25px; 
+  margin-top: 5px;
+}
+.nested-list li::before {
+  content: ""; 
+  margin-right: 8px;
+}
+
+.active__formI {
+    border: 2px solid var(--accentColor);
+    border-radius: 8px; 
+    padding: 20px; 
+    background-color: var(--secondaryColor); 
+    color: var(--mainColor);
+    max-width: 570px; 
+    margin: 50px 0; 
+    font-size: 18px;
+}
+.active__input-email{
+    font-size: 18px;
+    border: 1px solid var(--mainColor);
+    border-radius: 5px;
+    padding: 5px 7px;
+}
+.active__form-btn {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--mainColor);
+    background-color: var(--accentColor);
+    border: 1px solid var(--mainColor);
+    border-radius: 3px;
+    max-width: 260px;
+    text-align: center;
+    padding: 7px 20px;
+    margin-top: 20px;
+    transition: var(--transition);
+}
+.active__form-btn:hover {
+    background-color: var(--secondaryColor);
+}
+.active__formMessage {
+    font-size: 24px;
+    border: 1px solid var(--mainColor);
+    border-radius: 8px; 
+    padding: 20px; 
+    background-color: rgb(249, 248, 236); 
+    color: rgb(161, 84, 36);
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+
+.testing__wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+        "item1 item2"
+        "item3 item2";
+}
+.testing__title {
+    grid-area: item1;
+}
+.testing__img {
+    grid-area: item2;
+}
+.testing__checkbox {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 18px;
+    color: var(--mainColor);
+    margin-bottom: 50px;
+    grid-area: item3;
+} 
+.testing__checkbox-label {
+    max-width: 700px;
+}
+.testing__btn {
+    font-size: 16px;
+    background-color: var(--secondaryColor);
+}
+.testing__checkbox-btn {
+    font-size: 18px;
+    background-color: var(--accentColor);
+}
+.testing__btn, .testing__checkbox-btn {
+    color: var(--mainColor);
+    border-radius: 3px;
+    padding: 7px 20px;
+    margin-bottom: 10px;
+    transition: var(--transition);
+}
+.testing__btn:hover {
+    background-color: rgb(249, 248, 236);
+}
+.testing__checkbox-btn:hover {
+    background-color: var(--secondaryColor);
+}
+
+.missed {
+    outline: 2px dashed orange;
+}
+.correct {
+    background: var(--secondaryColor);
+}
+.wrong {
+    background: #f8d7da;
+}
+
+.check__wrapper{
+    border-bottom: 1px solid var(--mainColor);
+    max-width: 450px;
+    padding: 10px;
+    margin: 20px 0; 
+}
+.check__res {
+    font-size: 24px;
+    color: rgb(161, 84, 36);
+    text-align: center;
+}
+.check__wrap {
+    display: flex;
+}
+.check__text {
+    max-width: 850px;
+}
+.btnTrainers {
+    margin: 45px;
+    align-items: center;
+}
+
+.comment {
+    background-color: var(--secondaryColor);
+}
+.comment__wrapper {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    align-items: center;
+}
+.comment__text {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--mainColor);
+    margin: 0 7px;
+}
+.comment__form {
+    display: flex;
+    /*flex-wrap: wrap;*/
+    align-items: center;
+    gap: 10px;
+}
+.comment__form-input {
+    width: 300px;
+    font-size: 18px;
+    border: 1px solid var(--accentColor);
+    border-radius: 5px;
+    padding: 5px 7px;
+}
+.active__form {
+    box-shadow: 0 0 15px 1px red;
+    margin: 5px;
+}
+.comment__form-input::placeholder {
+    color: var(--accentColor);
+}
+.comment__form-btn {
+    font-size: 16px;
+    color: var(--mainColor);
+    background-color: var(--accentColor);
+    border-radius: 3px;
+    padding: 7px 20px;
+    transition: var(--transition);
+    margin: 0 7px;
+}
+.comment__form-btn:hover {
+    background-color: var(--secondaryColor);
+}
+.toast {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    padding: 15px 20px;
+    border-radius: 10px;
+
+    background-color: var(--secondaryColor);
+    color: var(--mainColor);
+
+    opacity: 0;  /* делает эл-т полностью прозрачным (невидимым) */
+    pointer-events: none; /* отключает реакцию на мышь и касания */ 
+
+    transition: var(--transition);
+}
+.toast.active {
+    opacity: 1; /* эл-т полностью видимый */
+}
+
+.footer {
+    background-color: var(--mainColor);
+}
+
+.footer__wrapper-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 25px 0;
+}
+
+.footer__menu-item {
+    padding: 7px 0;
+}

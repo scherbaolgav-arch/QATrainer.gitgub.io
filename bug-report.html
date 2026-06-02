@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баг-репорт</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bug-report.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+<div class="header-placeholder"></div>
+
+<main class="content" id="main">
+    <section class="intro">
+        <div class="container">
+            <h1 class="intro__title">🐞 Напиши баг-репорт</h1>
+            <p class="intro__text text">
+            Ты нашёл дефект.
+            Теперь попробуй описать его так,
+            чтобы другой человек смог воспроизвести проблему.
+            </p>
+            <p class="intro__text text">
+            Представь, что ты тестировщик,
+            а я — разработчик.
+            Если описание будет неполным,
+            я не смогу исправить ошибку.
+            </p>
+            <img src="./img/intro.png" class="intro__img" alt="Воспроизведи ошибку">
+        </div>
+    </section>
+
+    <section class="bug-task">
+        <div class="container">
+            <h2 id="taskTitle" class="bug-task__title"></h2>
+            <p id="taskDescription" class="bug-task__textTarget text"></p>
+            <p class="bug-task__text text">
+            Попробуй написать баг-репорт на этот дефект, заполнив форму ниже.
+            </p>
+            <div class="bug-task__btnWrapper">
+                <button class="bug-task__btn" id="prev-task__btn" type="button">← Предыдущее задание</button>
+                <button class="bug-task__btn" id="next-task__btn" type="button">Следующее задание →</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="form">
+        <div class="container">
+            <h2 class="form__title title">Заполни форму</h2>
+            <div class="form__contains">
+            <form class="form__bug-report">
+                    <h3 class="form__subtitle subtitle">Внесите данные ориентируясь на задание выше:</h3>
+                    <div class="form__wrapper">
+                        <label class="form__label" for="form__input-summary">Введите краткое описание бага.
+                            <textarea class="form__input" id="form__input-summary" name="summary" placeholder="Summary" required></textarea>
+                        </label>
+                    </div>
+
+                    <div class="form__wrapper">
+                        <label class="form__label" for="form__input-steps">Подробно опишите шаги.
+                            <textarea class="form__input" id="form__input-steps" name="steps" placeholder="Steps to Reproduce" required></textarea>
+                        </label>
+                    </div>
+
+                    <div class="form__wrapper">
+                        <label class="form__label" for="form__input-actual">Что произошло по факту?
+                            <textarea class="form__input" id="form__input-actual" name="actual" placeholder="Actual Result" required></textarea>
+                        </label>
+                    </div>
+
+                    <div class="form__wrapper">
+                        <label class="form__label" for="form__input-expected">Что ожидалось?
+                            <textarea class="form__input" id="form__input-expected" name="expected" placeholder="Expected Result" required></textarea>
+                        </label>
+                    </div>
+            </form>
+            <img src="./img/form.png" class="form__img" alt="Заполни поля">
+            </div>
+        </div>
+    </section>
+
+    <section class="response">
+        <div class="container">
+            <div class="response__result">
+                <h4 class="response__title">Summary:</h4>    
+                    <p id="responseSummary"></p>
+                <h4 class="response__title">Steps:</h4>
+                    <ul id="responseSteps"></ul>
+                <h4 class="response__title">Actual:</h4>
+                    <p id="responseActual"></p>
+                <h4 class="response__title">Expected:</h4>
+                    <ul id="responseExpected"></ul>
+            </div>
+            <button class="response__btn" id="response__submitBtn" type="button">Проверь себя</button>
+        </div>
+    </section>
+
+    <div class="comment-placeholder"></div>
+</main>
+
+<div class="footer-placeholder"></div>
+
+    <script src="js/getBlock.js"></script>
+    <script src="js/burgerMenu.js"></script>
+    <script src="js/updateForm.js"></script>
+    <script src="js/bug-report.js"></script>
+</body>
+</html>

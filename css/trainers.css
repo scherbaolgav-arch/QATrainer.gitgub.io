@@ -1,0 +1,46 @@
+.training__title {
+    margin-top: 70px;
+}
+.training__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 50px;
+    margin: 50px 50px;
+}
+.training__card {
+    border: 1px solid var(--mainColor);
+    border-radius: 5px;
+    padding: 20px;
+    display: block; 
+    transition: var(--transition);
+}
+.training__card:hover {
+    box-shadow: 10px 10px 10px var(--mainColor); 
+    transform: translateY(-5px);  
+}
+
+.training__card-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--accentColor);
+    text-align: center;
+    margin: 15px 0;
+}
+.training__card-img {
+    max-width: 350px;
+    align-items: center;
+    margin-left: 70px;
+}
+.training__card-interpretation {
+    color: var(--mainColor);
+    text-indent: 35px; 
+    font-size: 18px;
+    font-weight: 600;
+}
+.training__card-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--mainColor);
+    text-indent: 35px; 
+    margin-top: 20px;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Я тестирую!</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+<div class="header-placeholder"></div>
+
+    <main class="content" id="main">
+        <section class="hero">
+            <div class="container">
+                <div class="hero__wrapper">
+                <img class="hero__img" src="./img/heroImg.svg" alt="Главная картинка">
+                <h1 class="hero__title">Попробуй себя в роли тестировщика</h1>
+                <h3 class="hero__subtitle">Тестирование — это поиск ошибок в продукте</h3>
+                <a class="hero__cta btn" href="#comment">Поделись впечатлением</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="active">
+            <div class="container">
+                <h2 class="active__title title">Давай потестируем?!</h2>
+                <p class="text">→ Ниже, ты можешь увидеть очень простую форму с «ошибками», в которой имеется поле для ввода E-mail и кнопка "Отправить", соответственно для отправки данных.</p>        
+                <p class="text">→ Подумай 🧠 что, при попытке ввода и отправки значения, может пойти не так?</p>
+                <p class="text">→ Но вначале, представь, что система работает вот так:</p>
+                <div class="active__wrapper">
+                <img class="active__img" src="./img/active.png" alt="Картинка требования">
+                <div class="active__requirements-box">
+                <h3>✅ Базовые требования:</h3>
+                <ul class="active__requirements-list">
+                    <li>1. Поле Email не может быть пустым</li>
+                    <li>2. Email должен содержать ровно одну @</li>
+                    <li>3. После @ должна быть точка</li>
+                    <li>4. Разрешены только:
+                         <ul class="nested-list">
+                            <li>- латинские буквы</li>
+                            <li>- цифры</li>
+                            <li>- дефис</li>    
+                            <li>- точка</li></li>
+                        </ul>
+                    <li>5. Домен не может начинаться или заканчиваться точкой</li>
+                    <li>6. Email не может содержать пробелы</li>
+                    <li>7. Максимальная длина email — 256 символов</li>
+                    <li>8. После отправки:
+                        <ul class="nested-list">
+                            <li>✓ успех → сообщение + очистка поля</li>
+                            <li>✓ ошибка → сообщение с причиной</li>
+                        </ul>
+                    </li>
+                    <li>9. Кнопка визуально реагирует на наведение и клик</li>
+                </ul>
+                </div> 
+                </div>
+                <p class="text">А теперь поэкспериментируй! И проверь правильность ответов!</p>
+                <form class="active__formI">
+                    <h3 class="active__subtitle subtitle">Форма с «ошибками»</h3>
+                    <label class="active__label-email" for="active__email">Введите email:
+                        <input class="active__input-email" type="text" id="active__email" name="email" placeholder="Пример: test@test.com">
+                    </label>
+                    <button class="active__form-btn" id="active__submitBtn" type="button">Отправить</button>
+                </form>
+                <p id="active__formMessage"></p>
+            </div>
+        </section>
+
+        <section class="testing">
+            <div class="container">
+                <div class="testing__wrapper">
+                <h2 class="testing__title title">А теперь задание!</h2>
+                <img class="testing__img" src="./img/activeForm.svg" alt="Картинка тестируем">
+                <div class="testing__checkbox">
+                    <h3 class="testing__checkbox-subtitle subtitle">Выбери все обнаруженные дефекты:</h3>
+                    <label class="testing__checkbox-label" for="q1answer1">
+                        <input type="checkbox" name="question1" id="q1answer1" value="1"><span class="q1a1"> 1) В поле нельзя ввести email</span>
+                    </label>
+                    <label class="testing__checkbox-label" for="q1answer2">
+                        <input type="checkbox" name="question1" id="q1answer2" value="2"><span class="q1a2"> 2) Локальная часть email (часть email, перед @) не проверяется на запрещённые символы</span>
+                    </label>
+                    <label class="testing__checkbox-label" for="q1answer3">
+                        <input type="checkbox" name="question1" id="q1answer3" value="3"><span class="q1a3"> 3) Возможно отправить email с доменом первого уровня из одного символа (Например: test@mail.c)</span>
+                    </label>
+                    <label class="testing__checkbox-label" for="q1answer4">
+                        <input type="checkbox" name="question1" id="q1answer4" value="4"><span class="q1a4"> 4) Принимается слишком длинный email</span>
+                    </label>
+                    <label class="testing__checkbox-label" for="q1answer5">
+                        <input type="checkbox" name="question1" id="q1answer5" value="5"><span class="q1a5"> 5) Система принимает email с кириллическими символами</span>
+                    </label>
+                    <label class="testing__checkbox-label" for="q1answer6">
+                        <input type="checkbox" name="question1" id="q1answer6" value="6"><span class="q1a6"> 6) Кнопка визуально реагирует на клик</span>
+                    </label>
+                    <label class="testing__checkbox-label" for="q1answer7">
+                        <input type="checkbox" name="question1" id="q1answer7" value="7"><span class="q1a7"> 7) Система принимает поле, содержащее только пробелы</span>
+                    </label>
+                    <label class="testing__checkbox-label" for="q1answer8">
+                        <input type="checkbox" name="question1" id="q1answer8" value="8"><span class="q1a8"> 8) Домен (часть email, после @) может начинаться с дефиса</span>
+                    </label>
+                    <label class="testing__checkbox-label" for="q1answer9">
+                        <input type="checkbox" name="question1" id="q1answer9" value="9"><span class="q1a9"> 9) Нет очистки поля при успешной отправке email</span>
+                    </label>
+                    <label class="testing__checkbox-label" for="q1answer10">
+                        <input type="checkbox" name="question1" id="q1answer10" value="10"><span class="q1a10"> 10) Можно отправить пустое поле</span>
+                    </label>
+                </div>
+                </div>
+                <div class="testing__wrapper-btn">
+                <button class="testing__checkbox-btn" id="testing__checkbox-btn">💥 Проверить результат:</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="check">
+            <div class="container">
+                <div class="check__wrapper">
+                    <h2 class="check__title title">Ответ: </h2>
+                    <p class="check__res" id="check__res"></p>
+                </div>
+                <div class="check__wrap">
+                    <div class="check__text">
+                        <p class="text">Но найти дефект — только половина работы тестировщика...</p>
+                        <p class="text">После обнаружения проблемы её нужно грамотно описать, чтобы разработчик смог быстро воспроизвести и исправить ошибку.</p>
+                        <p class="text">Обязательно попробуйте свои силы в этом!</p>
+                    </div>
+                    <a href="trainers.html" class="btnTrainers btn">Перейти к тренажёрам →</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="comment-placeholder"></div>
+    </main>
+
+<div class="footer-placeholder"></div>
+
+    <script src="js/getBlock.js"></script>
+    <script src="js/burgerMenu.js"></script>
+    <script src="js/updateForm.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
